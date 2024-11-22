@@ -1,0 +1,34 @@
+from spellchecker import spellchecker
+
+class SpellChecker:
+    def __init__(self):
+        self.spell = SpellChecker()
+
+    def correct_text(self,text):
+        words=text.entry.split()
+        corrected_words=[]
+
+        for word in words:
+            corrected_words=self.spell.correction(word)
+            if corrected_words != word.lower():
+                print(f'Corrected "{word}" to "{corrected_words}"')
+                corrected_words.append(corrected_words)
+
+        return ' '.join(corrected_words)
+    
+    def run(self):
+        print("\n---Spell Checker---")
+
+        while True:
+            text =input('Enter text to check (or type "exit" to exit):')
+
+            if text.lower()=='exit':
+                print('Closing the progress...')
+                break
+
+            corrected_text = self.correct_text(text)
+            print(f'Corrected Text :{corrected_text}')
+
+
+if __name__=="_main_":
+    SpellChecker().run() 
